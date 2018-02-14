@@ -1,34 +1,99 @@
+using System.Linq;
+using System.Collections.Generic;
 using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Command;
+using MvvmLightDemo.Core.Models;
+using MvvmLightDemo.Core.Helpers;
+using MvvmLightDemo.Core.Extensions;
+
 
 namespace MvvmLightDemo.ViewModel
 {
-    /// <summary>
-    /// This class contains properties that the main View can data bind to.
-    /// <para>
-    /// Use the <strong>mvvminpc</strong> snippet to add bindable properties to this ViewModel.
-    /// </para>
-    /// <para>
-    /// You can also use Blend to data bind with the tool's support.
-    /// </para>
-    /// <para>
-    /// See http://www.galasoft.ch/mvvm
-    /// </para>
-    /// </summary>
     public class MainViewModel : ViewModelBase
     {
-        /// <summary>
-        /// Initializes a new instance of the MainViewModel class.
-        /// </summary>
+        private List<Card> FootballCards;
+        private RelayCommand buttonClicked;
+
+
+        private int numberShuffles;
+        public int NumberOfShuffles
+        {
+            get { return numberShuffles; }
+            set
+            {
+                Set(() => NumberOfShuffles, ref numberShuffles, value, true);
+                if (numberShuffles > 0) {
+                    buttonClicked.RaiseCanExecuteChanged();
+                }
+            }
+        }
+
+        private string teamName;
+        public string TeamName
+        {
+            get { return teamName; }
+            set { Set(() => TeamName, ref teamName, value, true); }
+        }
+
+        private string stadiumName;
+        public string StadiumName
+        {
+            get { return stadiumName; }
+            set { Set(() => StadiumName, ref stadiumName, value, true); }
+        }
+
+        private double capacity;
+        public double Capacity
+        {
+            get { return capacity; }
+            set { Set(() => Capacity, ref capacity, value, true); }
+        }
+
+        private double longitude;
+        public double Longitude
+        {
+            get { return longitude; }
+            set { Set(() => Longitude, ref longitude, value, true); }
+        }
+
+        private double latitude;
+        public double Latitude
+        {
+            get { return latitude; }
+            set { Set(() => Latitude, ref latitude, value, true); }
+        }
+
+        public RelayCommand ButtonClicked
+        {
+            get
+            {
+                return buttonClicked ?? (buttonClicked = new RelayCommand(() => {
+                    FootballCards = FootballCards.Shuffle(NumberOfShuffles);
+
+                    var topCard = FootballCards.First();
+
+                    TeamName = topCard.TeamName;
+                    StadiumName = topCard.StadiumName;
+                    Capacity = topCard.Capacity;
+                    Longitude = topCard.Longitude;
+                    Latitude = topCard.Latitude;
+                }));
+            }
+        }
+
+
         public MainViewModel()
         {
-            ////if (IsInDesignMode)
-            ////{
-            ////    // Code runs in Blend --> create design time data.
-            ////}
-            ////else
-            ////{
-            ////    // Code runs "for real"
-            ////}
+
+            FootballCards = Teams.GenerateCards;
+            NumberOfShuffles = 0;
+
+            var firstTeam = FootballCards.First();
+            TeamName = firstTeam.TeamName;
+            StadiumName = firstTeam.StadiumName;
+            Capacity = firstTeam.Capacity;
+            Longitude = firstTeam.Longitude;
+            Latitude = firstTeam.Latitude;
         }
     }
 }

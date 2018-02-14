@@ -41,6 +41,37 @@ namespace MvvmLightDemo
 			}
 		}
 		
+		public partial class Id
+		{
+			
+			// aapt resource value: 0x7f040005
+			public const int btnMapView = 2130968581;
+			
+			// aapt resource value: 0x7f040004
+			public const int btnShuffle = 2130968580;
+			
+			// aapt resource value: 0x7f040003
+			public const int editShuffles = 2130968579;
+			
+			// aapt resource value: 0x7f040002
+			public const int txtCapacity = 2130968578;
+			
+			// aapt resource value: 0x7f040001
+			public const int txtStadium = 2130968577;
+			
+			// aapt resource value: 0x7f040000
+			public const int txtTeamName = 2130968576;
+			
+			static Id()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Id()
+			{
+			}
+		}
+		
 		public partial class Layout
 		{
 			
@@ -62,6 +93,27 @@ namespace MvvmLightDemo
 			
 			// aapt resource value: 0x7f030000
 			public const int app_name = 2130903040;
+			
+			// aapt resource value: 0x7f030003
+			public const int capacityLabel = 2130903043;
+			
+			// aapt resource value: 0x7f030007
+			public const int homeLabel = 2130903047;
+			
+			// aapt resource value: 0x7f030006
+			public const int mapViewLabel = 2130903046;
+			
+			// aapt resource value: 0x7f030004
+			public const int numberOfShufflesLabel = 2130903044;
+			
+			// aapt resource value: 0x7f030005
+			public const int shuffleButtonLabel = 2130903045;
+			
+			// aapt resource value: 0x7f030002
+			public const int stadiumLabel = 2130903042;
+			
+			// aapt resource value: 0x7f030001
+			public const int teamNameLabel = 2130903041;
 			
 			static String()
 			{

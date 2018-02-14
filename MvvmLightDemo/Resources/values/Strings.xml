@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="app_name">MvvmLightDemo</string>
+  <string name="teamNameLabel">Team name</string>
+  <string name="stadiumLabel">Stadium</string>
+  <string name="capacityLabel">Capacity</string>
+  <string name="numberOfShufflesLabel">Number of shuffles</string>
+  <string name="shuffleButtonLabel">SHUFFLE TEAMS</string>
+  <string name="mapViewLabel">VIEW MAP</string>
+  <string name="homeLabel">HOME</string>
 </resources>
