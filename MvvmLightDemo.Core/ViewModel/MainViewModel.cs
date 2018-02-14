@@ -5,12 +5,14 @@ using GalaSoft.MvvmLight.Command;
 using MvvmLightDemo.Core.Models;
 using MvvmLightDemo.Core.Helpers;
 using MvvmLightDemo.Core.Extensions;
-
+using GalaSoft.MvvmLight.Views;
 
 namespace MvvmLightDemo.ViewModel
 {
     public class MainViewModel : ViewModelBase
     {
+        private INavigationService navigationService;
+
         private List<Card> FootballCards;
         private RelayCommand buttonClicked;
 
@@ -81,9 +83,21 @@ namespace MvvmLightDemo.ViewModel
             }
         }
 
-
-        public MainViewModel()
+        private RelayCommand buttonShowMap;
+        public RelayCommand ButtonShowMap
         {
+            get
+            {
+                return buttonShowMap ?? (buttonShowMap = new RelayCommand(() => {
+                    navigationService.NavigateTo(ViewModelLocator.MapPageKey, (Latitude, Longitude));
+                }));
+            }
+        }
+
+
+        public MainViewModel(INavigationService navigationService)
+        {
+            this.navigationService = navigationService;
 
             FootballCards = Teams.GenerateCards;
             NumberOfShuffles = 0;

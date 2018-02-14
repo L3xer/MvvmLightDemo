@@ -44,6 +44,10 @@ namespace MvvmLightDemo
             BtnShuffle.SetCommand(
                 "Click",
                 ViewModel.ButtonClicked);
+
+            BtnMap.SetCommand(
+                "Click",
+                ViewModel.ButtonShowMap);
         }
     }
 }

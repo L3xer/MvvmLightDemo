@@ -45,7 +45,7 @@ namespace MvvmLightDemo
 		{
 			
 			// aapt resource value: 0x7f040005
-			public const int btnMapView = 2130968581;
+			public const int btnMap = 2130968581;
 			
 			// aapt resource value: 0x7f040004
 			public const int btnShuffle = 2130968580;
@@ -77,6 +77,9 @@ namespace MvvmLightDemo
 			
 			// aapt resource value: 0x7f020000
 			public const int Main = 2130837504;
+			
+			// aapt resource value: 0x7f020001
+			public const int Map = 2130837505;
 			
 			static Layout()
 			{

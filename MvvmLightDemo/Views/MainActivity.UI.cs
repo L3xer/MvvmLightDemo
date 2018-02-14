@@ -8,6 +8,9 @@ namespace MvvmLightDemo
         private Button btnShuffle;
         public Button BtnShuffle => btnShuffle ?? (btnShuffle = FindViewById<Button>(Resource.Id.btnShuffle));
 
+        private Button btnMap;
+        public Button BtnMap => btnMap ?? (btnMap = FindViewById<Button>(Resource.Id.btnMap));
+
         private TextView txtTeamName;
         public TextView TxtTeamName => txtTeamName ?? (txtTeamName = FindViewById<TextView>(Resource.Id.txtTeamName));
 

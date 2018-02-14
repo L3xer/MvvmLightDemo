@@ -1,10 +1,34 @@
-﻿using MvvmLightDemo.ViewModel;
+﻿using System;
+using Android.App;
+using Android.Runtime;
+using GalaSoft.MvvmLight.Ioc;
+using GalaSoft.MvvmLight.Views;
+using MvvmLightDemo.ViewModel;
+
 
 namespace MvvmLightDemo
 {
-    public static class App
+    public class App : Application
     {
-        private static ViewModelLocator locator;
-        public static ViewModelLocator Locator => locator ?? (locator = new ViewModelLocator());
+        static ViewModelLocator locator;
+        public App(IntPtr h, JniHandleOwnership jho) : base(h, jho) { }
+
+        public static ViewModelLocator Locator
+        {
+            get
+            {
+                if (locator == null) {
+                    var navigationService = new NavigationService();
+
+                    navigationService.Configure(ViewModelLocator.MainPageKey, typeof(MainActivity));
+                    navigationService.Configure(ViewModelLocator.MapPageKey, typeof(MapActivity));
+
+                    SimpleIoc.Default.Register<INavigationService>(() => navigationService);
+
+                    locator = new ViewModelLocator();
+                }
+                return locator;
+            }
+        }
     }
 }
