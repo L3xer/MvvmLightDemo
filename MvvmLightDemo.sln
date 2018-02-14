@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmLightDemo", "MvvmLightDemo\MvvmLightDemo.csproj", "{B9647291-815F-4E3F-8914-68ACECE99AB7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmLightDemo.Core", "MvvmLightDemo.Core\MvvmLightDemo.Core.csproj", "{FCBF62E4-9E34-4611-A006-57767F03AC71}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +19,10 @@ Global
 		{B9647291-815F-4E3F-8914-68ACECE99AB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B9647291-815F-4E3F-8914-68ACECE99AB7}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B9647291-815F-4E3F-8914-68ACECE99AB7}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{FCBF62E4-9E34-4611-A006-57767F03AC71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCBF62E4-9E34-4611-A006-57767F03AC71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCBF62E4-9E34-4611-A006-57767F03AC71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCBF62E4-9E34-4611-A006-57767F03AC71}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
