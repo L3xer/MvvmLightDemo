@@ -1,9 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" 
-          package="MvvmLightDemo.MvvmLightDemo" 
-          android:versionCode="1" 
-          android:versionName="1.0">
-  <uses-sdk android:minSdkVersion="21" />
-  <application android:allowBackup="true" android:label="@string/app_name">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.axsoray.sharedinner" android:versionCode="1" android:versionName="1.0" android:installLocation="auto">
+	<uses-sdk android:minSdkVersion="21" />
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+	<uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<application android:allowBackup="true" android:label="@string/app_name">
+    <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyCE2eKWocOggN4qny-PPSpRV-k158L2eS4" />
   </application>
 </manifest>
